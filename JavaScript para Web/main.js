@@ -1,6 +1,11 @@
-function songPlayer(idAudioElement) {
-  document.querySelector(idAudioElement).play();
-}
+function songPlayer(audioSelector) {
+  const audioElement =  document.querySelector(audioSelector);
+  if (audioElement && audioElement.localName === "audio"){
+    audioElement.play();
+    return
+  }
+  throw Error("Audio não existente ou o seletor não é do tipo 'audio'")
+} 
 
 const keyList = document.querySelectorAll('.tecla');
 
