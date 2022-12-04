@@ -27,11 +27,17 @@ botaoMostra.forEach( (elemento) => {
   })
 })
 
-function EditaTintas(funcao){
-  if (funcao === "Mostrar tintas:"){
-    console.log("exibe")
-  } else if (funcao === "Esconder tintas:"){
-    console.log("oculta")
+function EditaTintas(operacao){
+  const corTip = document.querySelectorAll("[lista-cores]")
+
+  if (operacao === "Mostrar tintas:"){
+    corTip.forEach((elemento) => {
+      elemento.hidden = false
+    })
+  } else if (operacao === "Esconder tintas:"){
+    corTip.forEach((elemento) => {
+      elemento.hidden = true
+    })
   } else {
     throw Error("Parametro de função inválido")
   }
