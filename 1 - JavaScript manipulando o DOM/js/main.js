@@ -23,19 +23,21 @@ const botaoMostra = document.querySelectorAll("[data-controle]")
 
 botaoMostra.forEach( (elemento) => {
   elemento.addEventListener('click', (evento) => {
-    EditaTintas(evento.target.textContent)
+    EditaTintas(evento.target.textContent, evento.target)
   })
 })
 
-function EditaTintas(operacao){
+function EditaTintas(operacao, texto){
   const corTip = document.querySelectorAll("[lista-cores]")
 
-  if (operacao === "Mostrar tintas:"){
+  if (operacao === "Mostrar tintas"){
     corTip.forEach((elemento) => {
+      texto.innerHTML = "Esconder tintas"
       elemento.hidden = false
     })
-  } else if (operacao === "Esconder tintas:"){
+  } else if (operacao === "Esconder tintas"){
     corTip.forEach((elemento) => {
+      texto.innerHTML = "Mostrar tintas"
       elemento.hidden = true
     })
   } else {
