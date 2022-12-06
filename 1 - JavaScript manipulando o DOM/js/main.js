@@ -43,14 +43,14 @@ const coresRobo = [
   "rosa",
   "vermelho"
 ]
-let indexCor = 0
 
 imgRobo.addEventListener("click", () => {
   TrocaCor()
 })
 
+let indexCor = 0
 function TrocaCor (){
-  if (indexCor < (coresRobo.length - 1)) {
+  if (indexCor < coresRobo.length) {
     indexCor++
   } else{
     indexCor = 0
