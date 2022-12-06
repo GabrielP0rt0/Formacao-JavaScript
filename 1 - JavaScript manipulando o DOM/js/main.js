@@ -1,6 +1,7 @@
 const elementosControleAjuste = document.querySelectorAll("[data-controle]")
 const estatistica = document.querySelectorAll("[data-estatistica]")
 const peca = document.querySelectorAll("[peca]")
+const imgRobo = document.querySelector(".robo")
 const pecas = {
   "bracos": {
       "forca": 29,
@@ -33,6 +34,29 @@ const pecas = {
       "energia": 0,
       "velocidade": -2
   }
+}
+const coresRobo = [
+  "azul",
+  "branco",
+  "preto",
+  "amarelo",
+  "rosa",
+  "vermelho"
+]
+let indexCor = 0
+
+imgRobo.addEventListener("click", () => {
+  TrocaCor()
+})
+
+function TrocaCor (){
+  if (indexCor < (coresRobo.length - 1)) {
+    indexCor++
+  } else{
+    indexCor = 0
+  }
+  imgRobo.src = "./img/robotron-" + coresRobo[indexCor] + ".png"
+  console.log (imgRobo)
 }
 
 elementosControleAjuste.forEach( (elemento) => {
